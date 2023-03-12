@@ -1,4 +1,4 @@
-from modules.args import device, std, mean, TRAIN_PATH, MODELS_PATH, beta_, TEST_PATH, AUDIO_PATH, META_PATH
+from modules.args import device, std, mean, TRAIN_PATH, MODELS_PATH, beta_, TEST_PATH, AUDIO_PATH, META_PATH, num_epochs, batch_size, learning_rate
 from modules.model import Net
 import torch
 from torchvision import datasets
@@ -127,21 +127,21 @@ if __name__=='__main__':
 
     parser.add_argument(
         "--lr",
-        default=0.0001,
+        default=learning_rate,
         type=float,
         help="Learning rate to use for training (default: 0.0001)",
     )
 
     parser.add_argument(
         "--bs",
-        default=64,
+        default=batch_size,
         type=int,
         help="Batch size to use for training (default: 64)",
     )
 
     parser.add_argument(
         "--ep",
-        default=100,
+        default=num_epochs,
         type=int,
         help="No. of epochs for training (default: 100)",
     )
